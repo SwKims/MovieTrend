@@ -58,7 +58,7 @@ object NetworkModule {
     @Singleton
     @Provides
     fun provideBaseUrl(): String {
-        return "https://api.themoviedb.org/3"
+        return "https://api.themoviedb.org/3/"
     }
 
     @Singleton
@@ -76,6 +76,12 @@ object NetworkModule {
             .baseUrl(baeUrl)
             .build()
 
+    }
+
+    @Singleton
+    @Provides
+    fun provideMovieService(retrofit: Retrofit) : MovieServiceApi {
+        return retrofit.create(MovieServiceApi::class.java)
     }
 
 }

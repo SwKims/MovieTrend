@@ -12,6 +12,9 @@ import retrofit2.http.GET
 
 interface MovieServiceApi {
 
-    @GET("trending/all/day?api_key=4defd070082d28cda9bb902140bcf8d0&language=ko-KR")
+    /*// trending은 일부 작품이 한글설명이 없어 popular로 대체
+    @GET("trending/all/day?api_key=4defd070082d28cda9bb902140bcf8d0&language=ko-KR")*/
+
+    @GET("movie/popular?api_key=4defd070082d28cda9bb902140bcf8d0&language=ko-KR")
     fun getTrendingMovie() : Single<Movies>
 }
