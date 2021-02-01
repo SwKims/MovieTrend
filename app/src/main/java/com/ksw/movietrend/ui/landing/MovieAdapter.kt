@@ -3,6 +3,7 @@ package com.ksw.movietrend.ui.landing
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.ksw.movietrend.R
 import com.ksw.movietrend.glide.GlideApp
@@ -17,7 +18,7 @@ import kotlinx.android.synthetic.main.item_movie.view.*
 
 class MovieAdapter : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
 
-    private var movies : List<Movie> = listOf()
+    private var movies: List<Movie> = listOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
         return MovieViewHolder.from(parent)
@@ -28,9 +29,9 @@ class MovieAdapter : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
         holder.bind(movie)
     }
 
-    override fun getItemCount() : Int = movies.size
+    override fun getItemCount(): Int = movies.size
 
-    fun setMovies(movies : List<Movie>) {
+    fun setMovies(movies: List<Movie>) {
         this.movies = movies
         notifyDataSetChanged()
     }
@@ -38,6 +39,14 @@ class MovieAdapter : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
     class MovieViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         fun bind(movie: Movie) {
+
+            // go detailView
+            itemView.setOnClickListener {
+                val directions =
+                    LandingFragmentDirections.actionLandingFragmentToMovieDetailFragment(movie.id!!)
+                it.findNavController().navigate(directions)
+            }
+
             itemView.apply {
                 GlideApp.with(iv_poster)
                     .load("https://image.tmdb.org/t/p/w500${movie.posterPath}")
@@ -50,7 +59,7 @@ class MovieAdapter : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
         }
 
         companion object {
-            fun from(parent: ViewGroup) : MovieViewHolder {
+            fun from(parent: ViewGroup): MovieViewHolder {
                 val inflater = LayoutInflater.from(parent.context)
                 val itemView = inflater.inflate(R.layout.item_movie, parent, false)
                 return MovieViewHolder(itemView)
