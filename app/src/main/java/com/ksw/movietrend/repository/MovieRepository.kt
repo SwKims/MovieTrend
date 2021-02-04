@@ -1,5 +1,6 @@
 package com.ksw.movietrend.repository
 
+import com.ksw.movietrend.model.Movie
 import com.ksw.movietrend.model.Movies
 import com.ksw.movietrend.network.MovieServiceApi
 import io.reactivex.rxjava3.core.Single
@@ -17,6 +18,11 @@ class MovieRepository @Inject constructor(
 ) {
     fun getTrendingMovie() : Single<Movies> {
         return movieServiceApi.getTrendingMovie()
+            .subscribeOn(Schedulers.io())
+    }
+
+    fun getMovieDetails(movieId: Long) : Single<Movie> {
+        return movieServiceApi.getMovie(movieId)
             .subscribeOn(Schedulers.io())
     }
 

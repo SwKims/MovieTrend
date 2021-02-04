@@ -19,6 +19,9 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("String", "TMDB_API_KEY", "\"" + getApiKey() + "\"")
+        buildConfigField("String", "TMDB_BASE_URL", "\"" + "https://api.themoviedb.org/3/\"")
     }
 
     buildTypes {
@@ -82,4 +85,8 @@ dependencies {
 
     implementation "com.github.bumptech.glide:glide:4.11.0"
     kapt "com.github.bumptech.glide:compiler:4.11.0"
+}
+
+def getApiKey() {
+    return project.findProperty("tmdb_api")
 }

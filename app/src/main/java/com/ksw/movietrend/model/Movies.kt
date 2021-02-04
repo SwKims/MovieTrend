@@ -3,17 +3,13 @@ package com.ksw.movietrend.model
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
-/**
- * Created by KSW on 2021-01-28
- */
-
 @JsonClass(generateAdapter = true)
 data class Movies(
-    val page: Int,
+    val page: Long,
     @Json(name = "total_pages")
-    val totalPages: Int,
+    val totalPages: Long,
     @Json(name = "total_results")
-    val totalResults: Int,
+    val totalResults: Long,
     val results: List<Movie>
 )
 
@@ -39,4 +35,14 @@ data class Movie(
     val popularity: Double?,
     @Json(name = "media_type")
     val mediaType: String?,
+    // movie genre, time
+    val genres: List<Genre>?,
+    val runtime: Long?
+)
+
+// movie detail
+@JsonClass(generateAdapter = true)
+data class Genre(
+    val id: Long,
+    val name: String
 )

@@ -8,8 +8,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.ksw.movietrend.R
 import com.ksw.movietrend.glide.GlideApp
 import com.ksw.movietrend.model.Movie
-import com.ksw.movietrend.model.Movies
-import com.ksw.movietrend.model.Result
 import kotlinx.android.synthetic.main.item_movie.view.*
 
 /**
