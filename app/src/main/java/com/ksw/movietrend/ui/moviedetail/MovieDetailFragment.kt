@@ -14,7 +14,8 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.layout_loading.*
 import kotlinx.android.synthetic.main.movie_detail_fragment.*
 
-// https://mparchive.tistory.com/175
+// https://mparchive.tistory.com/175 ConstraintLayout
+// https://stackoverflow.com/questions/22192291/how-to-change-the-status-bar-color-in-android statusbar
 
 @AndroidEntryPoint
 class MovieDetailFragment : Fragment(R.layout.movie_detail_fragment) {
@@ -50,7 +51,7 @@ class MovieDetailFragment : Fragment(R.layout.movie_detail_fragment) {
 
                     if (movie?.genres != null && movie.genres.isNotEmpty()) {
                         val genres = movie.genres.joinToString(
-                            separator = "1",
+                            separator = " | ",
                             transform = { genre -> genre.name }
                         )
                         movieGenres.text = genres
@@ -79,15 +80,15 @@ class MovieDetailFragment : Fragment(R.layout.movie_detail_fragment) {
 
                 }
                 Status.LOADING -> {
+                    showLoading(true)
+                }
+                Status.ERROR -> {
                     showLoading(false)
                     Snackbar.make(
                         requireView(),
                         "Detail Movie!",
                         Snackbar.LENGTH_SHORT
                     ).show()
-                }
-                Status.ERROR -> {
-                    showLoading(true)
                 }
             }
         })

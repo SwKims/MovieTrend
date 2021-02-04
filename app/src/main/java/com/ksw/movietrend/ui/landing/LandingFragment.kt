@@ -8,6 +8,7 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
 import com.ksw.movietrend.R
+import com.ksw.movietrend.adapter.MovieAdapter
 import com.ksw.movietrend.model.Status
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.landing_fragment.*

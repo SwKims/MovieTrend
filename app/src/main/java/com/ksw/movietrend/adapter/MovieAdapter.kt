@@ -1,4 +1,4 @@
-package com.ksw.movietrend.ui.landing
+package com.ksw.movietrend.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.ksw.movietrend.R
 import com.ksw.movietrend.glide.GlideApp
 import com.ksw.movietrend.model.Movie
+import com.ksw.movietrend.ui.landing.LandingFragmentDirections
 import kotlinx.android.synthetic.main.item_movie.view.*
 
 /**
@@ -49,6 +50,7 @@ class MovieAdapter : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
                 GlideApp.with(iv_poster)
                     .load("https://image.tmdb.org/t/p/w500${movie.posterPath}")
                     .into(iv_poster)
+                tv_rate.text = movie.voteAverage.toString()
                 tv_title.text = movie.title
                 tv_releaseDate.text = movie.releaseDate
                 tv_overView.text = movie.overview
