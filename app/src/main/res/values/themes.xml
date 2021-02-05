@@ -12,9 +12,9 @@
         <item name="android:fitsSystemWindows">true</item>
         <item name="android:windowBackground">@drawable/background</item>
 
-        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+<!--        <item name="android:windowDrawsSystemBarBackgrounds">true</item>-->
 
-        <item name="android:statusBarColor">@color/transparent</item>
+<!--        <item name="android:statusBarColor">@color/transparent</item>-->
 
         // https://youngest-programming.tistory.com/381
 
