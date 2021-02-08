@@ -49,6 +49,8 @@ class MovieAdapter : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
             itemView.apply {
                 GlideApp.with(iv_poster)
                     .load("https://image.tmdb.org/t/p/w500${movie.posterPath}")
+                    .placeholder(R.drawable.ic_placeholder)
+                    .error(R.drawable.ic_error)
                     .into(iv_poster)
                 tv_rate.text = movie.voteAverage.toString()
                 tv_title.text = movie.title
