@@ -26,7 +26,7 @@ interface MovieServiceApi {
     @GET("movie/popular")
     fun getTrendingMovie(): Single<Movies>
 
-    @GET("movie/{movieId}")
+    @GET("movie/{movieId}?append_to_response=credits")
     fun getMovie(@Path("movieId") movieId: Long): Single<Movie>
 
 

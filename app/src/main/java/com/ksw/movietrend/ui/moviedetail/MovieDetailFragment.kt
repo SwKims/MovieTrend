@@ -6,10 +6,13 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
 import com.ksw.movietrend.R
+import com.ksw.movietrend.adapter.CastAdapter
 import com.ksw.movietrend.glide.GlideApp
 import com.ksw.movietrend.model.Status
+import com.ksw.movietrend.util.Constants.Companion.MAX_ACTOR_COUNT
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.layout_loading.*
 import kotlinx.android.synthetic.main.movie_detail_fragment.*
@@ -22,11 +25,23 @@ class MovieDetailFragment : Fragment(R.layout.movie_detail_fragment) {
 
     private val viewModel: MovieDetailViewModel by viewModels()
 
+    private lateinit var castAdapter: CastAdapter
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         iv_back.setOnClickListener {
             view.findNavController().popBackStack()
         }
+
+        castAdapter = CastAdapter()
+
+        rv_castActor.apply {
+            layoutManager =
+                LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+            adapter = castAdapter
+            isNestedScrollingEnabled = false
+        }
+
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -81,6 +96,20 @@ class MovieDetailFragment : Fragment(R.layout.movie_detail_fragment) {
 
                     movieVoteCount.text = movie?.voteCount.toString()
                     movieOverview.text = movie?.overview
+
+                    val casts = movie?.credits?.cast
+
+                    if (casts != null && casts.isNotEmpty()) {
+
+                        val numberOfActor =
+                            if (casts.size <= MAX_ACTOR_COUNT) {
+                                casts.size
+                            } else {
+                                MAX_ACTOR_COUNT
+                            }
+
+                        castAdapter.submitList(casts.take(numberOfActor))
+                    }
 
                 }
                 Status.LOADING -> {

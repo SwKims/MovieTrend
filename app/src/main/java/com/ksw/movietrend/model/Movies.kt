@@ -35,9 +35,11 @@ data class Movie(
     val popularity: Double?,
     @Json(name = "media_type")
     val mediaType: String?,
-    // movie genre, time
+    // movie genre, time add
     val genres: List<Genre>?,
-    val runtime: Long?
+    val runtime: Long?,
+    // credit add
+    val credits: Credits?
 )
 
 // movie detail
