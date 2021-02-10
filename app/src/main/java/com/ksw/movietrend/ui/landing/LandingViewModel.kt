@@ -17,8 +17,13 @@ class LandingViewModel @ViewModelInject constructor(
 
     private val compositeDisposable = CompositeDisposable()
     private val _trendingMovies = MutableLiveData<NetworkResource<List<Movie>>>()
+    private val _upcomingMovies = MutableLiveData<NetworkResource<List<Movie>>>()
+
     val trendingMovies: LiveData<NetworkResource<List<Movie>>>
         get() = _trendingMovies
+
+    val upcomingMovies: LiveData<NetworkResource<List<Movie>>>
+        get() = _upcomingMovies
 
     init {
         compositeDisposable.add(
@@ -28,8 +33,18 @@ class LandingViewModel @ViewModelInject constructor(
                 .subscribe({
                         movies -> _trendingMovies.value = NetworkResource.Success(movies.results) },
                     { t ->
-                        Timber.e(t)
                         _trendingMovies.value = NetworkResource.Error("Network Error!", null)
+                    })
+        )
+
+        compositeDisposable.add(
+            movieRepository.getUpcomingMovie()
+                .doOnSubscribe { _upcomingMovies.value = NetworkResource.Loading(null) }
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe({
+                        movies -> _upcomingMovies.value = NetworkResource.Success(movies.results) },
+                    { t ->
+                        _upcomingMovies.value = NetworkResource.Error("Network Error!", null)
                     })
         )
     }

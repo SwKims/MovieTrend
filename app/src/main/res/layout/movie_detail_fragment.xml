@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tool="http://schemas.android.com/apk/res-auto"
     android:background="@color/colorCardBackground"
     android:fitsSystemWindows="true"
     tools:context=".ui.moviedetail.MovieDetailFragment">
@@ -154,6 +155,7 @@
                 </LinearLayout>
 
             </RelativeLayout>
+
 
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="match_parent"

@@ -7,5 +7,6 @@ class Constants {
 
     companion object {
         const val MAX_ACTOR_COUNT = 10
+        const val LANGUAGE = "ko-KR"
     }
 }

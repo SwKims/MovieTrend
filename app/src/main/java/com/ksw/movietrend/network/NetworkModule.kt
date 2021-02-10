@@ -1,6 +1,7 @@
 package com.ksw.movietrend.network
 
 import com.ksw.movietrend.BuildConfig
+import com.ksw.movietrend.util.Constants.Companion.LANGUAGE
 import com.squareup.moshi.Moshi
 import dagger.Module
 import dagger.Provides
@@ -19,8 +20,6 @@ import javax.inject.Singleton
 /**
  * Created by KSW on 2021-01-28
  */
-
-const val LANGUAGE = "ko-KR"
 
 @Module
 @InstallIn(ApplicationComponent::class)

@@ -25,14 +25,45 @@ class LandingFragment : Fragment(R.layout.landing_fragment) {
         super.onViewCreated(view, savedInstanceState)
 
         movieAdapter = MovieAdapter()
-        recyclerview_movie.layoutManager = LinearLayoutManager(requireContext())
-        recyclerview_movie.adapter = movieAdapter
+        /*recyclerview_movie.layoutManager = LinearLayoutManager(requireContext())
+        recyclerview_movie.adapter = movieAdapter*/
+
+        recyclerview_movie.apply {
+            layoutManager =
+                LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+            adapter = movieAdapter
+            isNestedScrollingEnabled = false
+        }
+
+        recyclerview_movie2.apply {
+            layoutManager =
+                LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+            adapter = movieAdapter
+            isNestedScrollingEnabled = false
+        }
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
         landingViewModel.trendingMovies.observe(viewLifecycleOwner, Observer {
+            when (it.status) {
+                Status.SUCCESS -> {
+                    showLoad(false)
+                    movieAdapter.setMovies(it.data!!)
+                }
+                Status.LOADING -> {
+                    showLoad(false)
+//                    Snackbar.make(requireView(), "a", Snackbar.LENGTH_SHORT).show()
+                }
+                Status.ERROR -> {
+                    showLoad(true)
+                    Snackbar.make(requireView(), "인터넷 연결을 해주세요.", Snackbar.LENGTH_SHORT).show()
+                }
+            }
+        })
+
+        landingViewModel.upcomingMovies.observe(viewLifecycleOwner, Observer {
             when (it.status) {
                 Status.SUCCESS -> {
                     showLoad(false)

@@ -3,6 +3,7 @@ package com.ksw.movietrend.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -10,6 +11,7 @@ import com.bumptech.glide.load.resource.bitmap.CircleCrop
 import com.ksw.movietrend.R
 import com.ksw.movietrend.glide.GlideApp
 import com.ksw.movietrend.model.Cast
+import com.ksw.movietrend.ui.moviedetail.MovieDetailFragmentDirections
 import kotlinx.android.synthetic.main.item_cast.view.*
 
 /**
@@ -19,9 +21,14 @@ class CastAdapter : ListAdapter<Cast, CastAdapter.MyViewHolder>(comparator) {
 
     class MyViewHolder private constructor(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-
         fun bind(cast: Cast) {
             itemView.apply {
+
+                setOnClickListener {
+                    it.findNavController()
+                        .navigate(MovieDetailFragmentDirections.actionMovieDetailFragmentToActorFragment(cast))
+                }
+
                 GlideApp.with(iv_castActor)
                     .load("https://image.tmdb.org/t/p/original${cast.profilePath}")
                     .placeholder(R.drawable.ic_user_placeholder)
