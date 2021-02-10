@@ -1,0 +1,66 @@
+package com.ksw.movietrend.adapter
+
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.ImageView
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.RecyclerView
+import com.ksw.movietrend.model.ProfileImage
+import androidx.recyclerview.widget.ListAdapter
+import com.ksw.movietrend.R
+import com.ksw.movietrend.glide.GlideApp
+
+/**
+ * Created by KSW on 2021-02-09
+ */
+
+class PhotoAdapter : ListAdapter<ProfileImage, PhotoAdapter.PhotoViewHolder>(comparator) {
+
+    class PhotoViewHolder private constructor(itemView: View) : RecyclerView.ViewHolder(itemView) {
+
+        fun bind(item: ProfileImage) {
+            itemView.let {
+                GlideApp.with(itemView)
+                    .load("https://image.tmdb.org/t/p/original${item.path}")
+                    .placeholder(R.drawable.ic_user_placeholder)
+                    .error(R.drawable.ic_user_placeholder)
+                    .thumbnail(0.5f)
+                    .into(itemView as ImageView)
+            }
+        }
+
+        companion object {
+            fun from(parent: ViewGroup): PhotoViewHolder {
+                val viewHolder =
+                    LayoutInflater.from(parent.context).inflate(R.layout.item_photo, parent, false)
+
+                return PhotoViewHolder(viewHolder)
+            }
+        }
+    }
+
+    companion object {
+        private val comparator = object : DiffUtil.ItemCallback<ProfileImage>() {
+            override fun areItemsTheSame(oldItem: ProfileImage, newItem: ProfileImage): Boolean {
+                return oldItem.path == newItem.path
+            }
+
+            override fun areContentsTheSame(oldItem: ProfileImage, newItem: ProfileImage): Boolean {
+                return oldItem == newItem
+            }
+
+        }
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PhotoViewHolder {
+        return PhotoViewHolder.from(parent)
+    }
+
+    override fun onBindViewHolder(holder: PhotoViewHolder, position: Int) {
+        val item = getItem(position)
+        holder.bind(item)
+    }
+
+
+}
