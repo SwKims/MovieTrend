@@ -37,7 +37,7 @@ interface MovieServiceApi {
     @GET("person/{id}/images")
     fun getPersonImages(@Path("id") castId: Long): Single<Profile>
 
-    @GET("person/{person_id}/movie_credits")
+    @GET("person/{personId}/movie_credits")
     fun getPersonMovies(@Path ("id") castId: Long): Single<ProfileMovie>
 
 }
@@ -47,3 +47,4 @@ interface MovieServiceApi {
 
 // 하정우 출연작
 // https://api.themoviedb.org/3/person/75913/movie_credits?api_key=4defd070082d28cda9bb902140bcf8d0&language=en-US
+// https://api.themoviedb.org/3/person/75913/movie_credits?api_key=4defd070082d28cda9bb902140bcf8d0&language=ko-KR

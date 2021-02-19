@@ -13,10 +13,10 @@ import com.ksw.movietrend.ui.upcoming.UpcomingFragmentDirections
 import kotlinx.android.synthetic.main.item_movie.view.*
 
 /**
- * Created by KSW on 2021-01-29
+ * Created by KSW on 2021-02-10
  */
 
-class MovieAdapter : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
+class UpcomingAdapter : RecyclerView.Adapter<UpcomingAdapter.MovieViewHolder>() {
 
     private var movies: List<Movie> = listOf()
 
@@ -43,7 +43,7 @@ class MovieAdapter : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
             // go detailView
             itemView.setOnClickListener {
                 val directions =
-                    LandingFragmentDirections.actionLandingFragmentToMovieDetailFragment(movie.id!!)
+                    UpcomingFragmentDirections.actionUpcomingFragmentToMovieDetailFragment(movie.id!!)
                 it.findNavController().navigate(directions)
             }
 
@@ -55,7 +55,6 @@ class MovieAdapter : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
                     .into(iv_poster)
                 tv_rate.text = movie.voteAverage.toString()
                 tv_title.text = movie.title
-                tv_language.text = movie.originalLanguage!!.toUpperCase()
                 tv_releaseDate.text = movie.releaseDate
                 tv_overView.text = movie.overview
             }
