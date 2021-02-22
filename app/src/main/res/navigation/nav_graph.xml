@@ -7,7 +7,46 @@
 
     <fragment
         android:id="@+id/landingFragment"
-        android:name="com.ksw.movietrend.ui.landing.LandingFragment"
+        android:name="com.ksw.movietrend.ui.popular.LandingFragment"
         android:label="landing_fragment"
-        tools:layout="@layout/landing_fragment" />
+        tools:layout="@layout/landing_fragment" >
+        <action
+            android:id="@+id/action_landingFragment_to_movieDetailFragment"
+            app:destination="@id/movieDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/movieDetailFragment"
+        android:name="com.ksw.movietrend.ui.moviedetail.MovieDetailFragment"
+        android:label="movie_detail_fragment"
+        tools:layout="@layout/movie_detail_fragment" >
+        <argument
+            android:name="movieId"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_movieDetailFragment_to_actorFragment"
+            app:destination="@id/actorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/actorFragment"
+        android:name="com.ksw.movietrend.ui.actor.CastFragment"
+        android:label="fragment_actor"
+        tools:layout="@layout/fragment_cast" >
+        <argument
+            android:name="cast"
+            app:argType="com.ksw.movietrend.model.Cast" />
+    </fragment>
+    <fragment
+        android:id="@+id/upcomingFragment"
+        android:name="com.ksw.movietrend.ui.upcoming.UpcomingFragment"
+        android:label="fragment_upcoming"
+        tools:layout="@layout/fragment_upcoming" >
+        <action
+            android:id="@+id/action_upcomingFragment_to_movieDetailFragment"
+            app:destination="@id/movieDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/trendingFragment"
+        android:name="com.ksw.movietrend.ui.trending.TrendingFragment"
+        android:label="fragment_trending"
+        tools:layout="@layout/fragment_trending" />
 </navigation>
