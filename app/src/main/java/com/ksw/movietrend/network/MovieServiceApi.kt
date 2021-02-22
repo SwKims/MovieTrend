@@ -40,11 +40,23 @@ interface MovieServiceApi {
     @GET("person/{personId}/movie_credits")
     fun getPersonMovies(@Path ("id") castId: Long): Single<ProfileMovie>
 
+    @GET("movie/{movieId}?/videos")
+    fun getMovieTrailer(@Path ("movieId") movieId: Long): Single<Trailer>
+
 }
 
+/* 승리호 트레일러 */
+
+// https://api.themoviedb.org/3/movie/581389/videos?api_key=4defd070082d28cda9bb902140bcf8d0&language=ko-KR
+
 // https://api.themoviedb.org/3/search/movie?api_key=4defd070082d28cda9bb902140bcf8d0&language=ko-KR&query=Avengers&page=1&include_adult=false
+
+// https://api.themoviedb.org/3/movie/11111/videos?api_key=4defd070082d28cda9bb902140bcf8d0&language=en-US
 
 
 // 하정우 출연작
 // https://api.themoviedb.org/3/person/75913/movie_credits?api_key=4defd070082d28cda9bb902140bcf8d0&language=en-US
 // https://api.themoviedb.org/3/person/75913/movie_credits?api_key=4defd070082d28cda9bb902140bcf8d0&language=ko-KR
+
+// 영화 이미지
+// https://api.themoviedb.org/3/movie/11111/images?api_key=4defd070082d28cda9bb902140bcf8d0

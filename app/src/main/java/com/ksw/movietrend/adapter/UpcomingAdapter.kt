@@ -55,6 +55,7 @@ class UpcomingAdapter : RecyclerView.Adapter<UpcomingAdapter.MovieViewHolder>() 
                     .into(iv_poster)
                 tv_rate.text = movie.voteAverage.toString()
                 tv_title.text = movie.title
+                tv_language.text = movie.originalLanguage!!.toUpperCase()
                 tv_releaseDate.text = movie.releaseDate
                 tv_overView.text = movie.overview
             }

@@ -1,24 +1,33 @@
 package com.ksw.movietrend.ui.moviedetail
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
+import com.ksw.movietrend.BuildConfig
 import com.ksw.movietrend.R
 import com.ksw.movietrend.adapter.CastAdapter
 import com.ksw.movietrend.glide.GlideApp
 import com.ksw.movietrend.model.Status
+import com.ksw.movietrend.util.Constants.Companion.homePage
 import com.ksw.movietrend.util.Constants.Companion.MAX_ACTOR_COUNT
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.layout_loading.*
 import kotlinx.android.synthetic.main.movie_detail_fragment.*
+import kotlinx.android.synthetic.main.movie_trailer.*
 
 // https://mparchive.tistory.com/175 ConstraintLayout
 // https://stackoverflow.com/questions/22192291/how-to-change-the-status-bar-color-in-android statusbar
+
+
+private const val ID = "movieId"
 
 @AndroidEntryPoint
 class MovieDetailFragment : Fragment(R.layout.movie_detail_fragment) {
@@ -26,6 +35,7 @@ class MovieDetailFragment : Fragment(R.layout.movie_detail_fragment) {
     private val viewModel: MovieDetailViewModel by viewModels()
 
     private lateinit var castAdapter: CastAdapter
+    private var movieId = 0L
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -42,7 +52,40 @@ class MovieDetailFragment : Fragment(R.layout.movie_detail_fragment) {
             isNestedScrollingEnabled = false
         }
 
+        /*watch_trailer2.setOnClickListener {
+            watchTrailerWithYoutube()
+        }*/
+
+        go_homepage.setOnClickListener {
+            openMovieSite()
+        }
+
     }
+
+    private fun openMovieSite() {
+        if (homePage == "") {
+            Toast.makeText(context, "홈페이지가 없습니다!", Toast.LENGTH_SHORT).show()
+        }
+        else {
+            if (homePage != "") {
+                val browserIntent =
+                    Intent(Intent.ACTION_VIEW, Uri.parse(homePage))
+                val browserChooserIntent =
+                    Intent.createChooser(browserIntent, "Open with")
+                startActivity(browserChooserIntent)
+            }
+        }
+    }
+
+    private fun watchTrailerWithYoutube() {
+            startActivity(
+                Intent(Intent.ACTION_VIEW, Uri.parse(String.format(BuildConfig.YOUTUBE_VIDEO_URL,"%s")
+            )))
+    }
+        /*startActivity(
+            Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=mB7KqeWIWA0"))
+        )*/
+
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
@@ -53,6 +96,14 @@ class MovieDetailFragment : Fragment(R.layout.movie_detail_fragment) {
                     showLoading(false)
 
                     val movie = it.data
+
+                    if (movie != null) {
+                        movieId = movie.id!!
+                    }
+
+                    if (movie != null) {
+                        homePage = movie.homepage!!
+                    }
 
                     GlideApp.with(iv_movieTitle)
                         .load("https://image.tmdb.org/t/p/original${movie?.backdropPath}")

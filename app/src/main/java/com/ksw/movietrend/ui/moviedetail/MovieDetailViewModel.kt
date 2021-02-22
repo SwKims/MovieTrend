@@ -9,6 +9,7 @@ import androidx.lifecycle.ViewModel
 import com.ksw.movietrend.model.Movie
 import com.ksw.movietrend.model.NetworkResource
 import com.ksw.movietrend.repository.MovieRepository
+import com.ksw.movietrend.util.Constants.Companion.MOVIE_ID_KEY
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 
@@ -25,6 +26,8 @@ class MovieDetailViewModel @ViewModelInject constructor(
 
     private val _movie = MutableLiveData<NetworkResource<Movie>>()
     private val compositeDisposable = CompositeDisposable()
+
+    private val movieId = savedStateHandle[MOVIE_ID_KEY] ?: 0
 
     val movie: LiveData<NetworkResource<Movie>>
         get() = _movie

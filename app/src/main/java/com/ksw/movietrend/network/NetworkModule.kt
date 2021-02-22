@@ -99,6 +99,13 @@ object NetworkModule {
 
     @Singleton
     @Provides
+    @Named("youtube_video_url")
+    fun provideYoutube(): String {
+        return BuildConfig.YOUTUBE_VIDEO_URL
+    }
+
+    @Singleton
+    @Provides
     fun provideRetrofit(
         httpLoggingInterceptor: Call.Factory,
         moshiConverterFactory: MoshiConverterFactory,

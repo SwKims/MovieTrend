@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tool="http://schemas.android.com/apk/res-auto"
     android:background="@color/colorCardBackground"
     android:fitsSystemWindows="true"
     tools:context=".ui.moviedetail.MovieDetailFragment">
@@ -156,6 +156,20 @@
 
             </RelativeLayout>
 
+           <!-- <Button
+                android:id="@+id/watch_trailer2"
+                android:text="WATCH TRAILER"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />-->
+
+            <Button
+                android:id="@+id/go_homepage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:drawableRight="@drawable/ic_movie"
+                android:text="영화 홈페이지"
+                android:textStyle="bold" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="match_parent"
@@ -173,8 +187,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="7dp"
-                android:paddingHorizontal="16dp"
                 android:maxLines="10"
+                android:paddingHorizontal="16dp"
                 android:textSize="15sp"
                 tools:text="영화는 전설이다." />
 
@@ -192,11 +206,20 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_castActor"
                 android:layout_width="match_parent"
-                android:clipToPadding="false"
                 android:layout_height="wrap_content"
+                android:clipToPadding="false"
                 android:paddingHorizontal="16dp"
                 tools:itemCount="1"
                 tools:listitem="@layout/item_cast" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_recommand"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                tools:itemCount="1"
+                tools:listitem="@layout/item_recommand" />
+
 
         </LinearLayout>
 

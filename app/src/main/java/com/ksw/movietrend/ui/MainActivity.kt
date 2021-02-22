@@ -13,12 +13,20 @@ import com.ksw.movietrend.R
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_main.*
 
+
+private const val ID = "movieId"
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
+
+    var movieId = 0L
+    private var key = ""
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        movieId = intent.getLongExtra(ID, 0L)
 
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
         val navController = findNavController(R.id.nav_host_fragment)

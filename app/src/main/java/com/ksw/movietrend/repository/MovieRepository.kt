@@ -13,9 +13,9 @@ import javax.inject.Singleton
 
 @Singleton
 class MovieRepository @Inject constructor(
-    private val movieServiceApi : MovieServiceApi
+    private val movieServiceApi: MovieServiceApi
 ) {
-    fun getTrendingMovie() : Single<Movies> {
+    fun getTrendingMovie(): Single<Movies> {
         return movieServiceApi.getTrendingMovie()
             .subscribeOn(Schedulers.io())
     }
@@ -25,7 +25,7 @@ class MovieRepository @Inject constructor(
             .subscribeOn(Schedulers.io())
     }
 
-    fun getMovieDetails(movieId: Long) : Single<Movie> {
+    fun getMovieDetails(movieId: Long): Single<Movie> {
         return movieServiceApi.getMovie(movieId)
             .subscribeOn(Schedulers.io())
     }
@@ -49,6 +49,14 @@ class MovieRepository @Inject constructor(
             .map {
                 it.profilesMovie
             }
+    }
+
+
+    // trailer
+    fun getMovieTrailer(movieId: Long): Single<Trailer> {
+        return movieServiceApi.getMovieTrailer(movieId)
+            .subscribeOn(Schedulers.io())
+
     }
 
 }
