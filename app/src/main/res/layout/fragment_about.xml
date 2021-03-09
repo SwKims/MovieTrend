@@ -178,7 +178,7 @@
 
             </LinearLayout>
 
-            <com.google.android.material.textview.MaterialTextView
+          <!--  <com.google.android.material.textview.MaterialTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingHorizontal="16dp"
@@ -189,7 +189,7 @@
                 android:id="@+id/tv_Biography"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingHorizontal="16dp" />
+                android:paddingHorizontal="16dp" />-->
 
 
         </LinearLayout>

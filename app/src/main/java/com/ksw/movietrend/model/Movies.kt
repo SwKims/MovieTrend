@@ -55,11 +55,12 @@ data class Genre(
 @JsonClass(generateAdapter = true)
 data class Trailer(
     val id: Long?,
-    val results: List<Result>?
+    @Json(name = "results")
+    val videos: List<Video>?
 )
 
 @JsonClass(generateAdapter = true)
-data class Result(
+data class Video(
     val key: String?,
     val name: String?
 )

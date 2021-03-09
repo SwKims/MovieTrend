@@ -16,6 +16,7 @@ import com.ksw.movietrend.R
 import com.ksw.movietrend.adapter.CastAdapter
 import com.ksw.movietrend.glide.GlideApp
 import com.ksw.movietrend.model.Status
+import com.ksw.movietrend.model.Video
 import com.ksw.movietrend.util.Constants.Companion.homePage
 import com.ksw.movietrend.util.Constants.Companion.MAX_ACTOR_COUNT
 import dagger.hilt.android.AndroidEntryPoint
@@ -52,15 +53,18 @@ class MovieDetailFragment : Fragment(R.layout.movie_detail_fragment) {
             isNestedScrollingEnabled = false
         }
 
-        /*watch_trailer2.setOnClickListener {
-            watchTrailerWithYoutube()
-        }*/
 
         go_homepage.setOnClickListener {
             openMovieSite()
         }
 
     }
+
+/*    fun onMovieTrailerClick(video: Video?) {
+        watch_trailer2.setOnClickListener {
+            watchTrailerWithYoutube(video?.key)
+        }
+    }*/
 
     private fun openMovieSite() {
         if (homePage == "") {
@@ -77,9 +81,9 @@ class MovieDetailFragment : Fragment(R.layout.movie_detail_fragment) {
         }
     }
 
-    private fun watchTrailerWithYoutube() {
+    fun watchTrailerWithYoutube(videoId: String?) {
             startActivity(
-                Intent(Intent.ACTION_VIEW, Uri.parse(String.format(BuildConfig.YOUTUBE_VIDEO_URL,"%s")
+                Intent(Intent.ACTION_VIEW, Uri.parse(String.format(BuildConfig.YOUTUBE_VIDEO_URL + videoId)
             )))
     }
         /*startActivity(

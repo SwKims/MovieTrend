@@ -58,8 +58,8 @@ class AboutFragment : Fragment(R.layout.fragment_about) {
                         tv_Department.text =
                             if (!cast.department.isNullOrEmpty()) cast.department else getString(R.string.dash)
 
-                        tv_Biography.text =
-                            if (!cast.biography.isNullOrEmpty()) cast.biography else getString(R.string.dash)
+                      /*  tv_Biography.text =
+                            if (!cast.biography.isNullOrEmpty()) cast.biography else getString(R.string.dash)*/
 
                         tvKnownAs.text =
                             if (!cast.knownAs.isNullOrEmpty()) cast.knownAs.joinToString(", ") else getString(
