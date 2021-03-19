@@ -13,10 +13,10 @@
  
 ### * Libraries
   
-[Moshi](https://github.com/square/moshi),   
-[Okhttp3](https://github.com/square/okhttp),   
-[Gilde](https://github.com/bumptech/glide),    
-[Retrofit](https://github.com/square/retrofit)
+- [Moshi](https://github.com/square/moshi),   
+- [Okhttp3](https://github.com/square/okhttp),   
+- [Gilde](https://github.com/bumptech/glide),    
+- [Retrofit](https://github.com/square/retrofit)
 
 MVVM architecture, Rxjava, Hilt,   
 - - -
