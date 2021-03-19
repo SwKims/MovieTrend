@@ -23,5 +23,5 @@ MVVM architecture, Rxjava, Hilt,
 
 ## * Architecure
 
-<img src="https://user-images.githubusercontent.com/71965874/107483462-6f4cd380-6bc4-11eb-86b3-a9e43e9eb98e.PNG" width="800" height="500">
+<img src="https://user-images.githubusercontent.com/71965874/107483462-6f4cd380-6bc4-11eb-86b3-a9e43e9eb98e.PNG">
 
