@@ -26,10 +26,14 @@ MVVM architecture, Rxjava, Hilt,
 <img src="https://user-images.githubusercontent.com/71965874/107483462-6f4cd380-6bc4-11eb-86b3-a9e43e9eb98e.PNG">
 
 
-
 <img src="https://user-images.githubusercontent.com/71965874/111738338-86b66500-88c4-11eb-995a-a27435a17abd.PNG" width="75%" height="75%">
 
-![KakaoTalk_20210319_142405933](https://user-images.githubusercontent.com/71965874/111738636-080df780-88c5-11eb-9590-06095ba1aa7a.jpg)
+<img src="https://user-images.githubusercontent.com/71965874/111738636-080df780-88c5-11eb-9590-06095ba1aa7a.jpg" width="25% height="25%">
+<img src="https://user-images.githubusercontent.com/71965874/111738636-080df780-88c5-11eb-9590-06095ba1aa7a.jpg" width="25% height="25%">
+<img src="https://user-images.githubusercontent.com/71965874/111738636-080df780-88c5-11eb-9590-06095ba1aa7a.jpg" width="25% height="25%">
+<img src="https://user-images.githubusercontent.com/71965874/111738636-080df780-88c5-11eb-9590-06095ba1aa7a.jpg" width="25% height="25%">
+
+                                                                                                                                        
 ![KakaoTalk_20210319_142405933_01](https://user-images.githubusercontent.com/71965874/111738642-093f2480-88c5-11eb-8923-110317f36e10.jpg)
 ![KakaoTalk_20210319_142405933_02](https://user-images.githubusercontent.com/71965874/111738645-09d7bb00-88c5-11eb-8d66-6c0096e002fc.jpg)
 ![KakaoTalk_20210319_142405933_03](https://user-images.githubusercontent.com/71965874/111738647-0b08e800-88c5-11eb-9232-91e7e1221d0c.jpg)
