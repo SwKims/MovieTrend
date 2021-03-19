@@ -3,7 +3,9 @@
 
 [TMDB](https://www.themoviedb.org/) 사용한 [이전에 만든 앱](https://github.com/SwKims/MVVM_MovieApp)보다 더 업그레이드 된 version
 
-* Android Jetpack
+
+
+### Android Jetpack
 - - -
 Navigation Component,
 LiveData,
