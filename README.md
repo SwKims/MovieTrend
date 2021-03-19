@@ -5,11 +5,11 @@
 
 
 
-### Android Jetpack
+### *Android Jetpack
 - - -
-Navigation Component,
-LiveData,
-ViewModel
+-Navigation Component,
+-LiveData,
+-ViewModel
 - - -
 * Libraries
 MVVM pattern, 
