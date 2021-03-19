@@ -10,7 +10,7 @@
 - LiveData,   
 - ViewModel
 - - -
-- 
+ 
 ### * Libraries
 MVVM pattern,   
 Rxjava,   
