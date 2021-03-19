@@ -12,15 +12,13 @@
 - - -
  
 ### * Libraries
-MVVM pattern,   
-Rxjava,   
-Hilt,   
-Moshi(converter),   
+  
+[Moshi](https://github.com/square/moshi),   
 [Okhttp3](https://github.com/square/okhttp),   
 [Gilde](https://github.com/bumptech/glide),    
 [Retrofit](https://github.com/square/retrofit)
 
-
+MVVM architecture, Rxjava, Hilt,   
 - - -
 
 <img src="https://user-images.githubusercontent.com/71965874/107483462-6f4cd380-6bc4-11eb-86b3-a9e43e9eb98e.PNG" width="400" height="500">
