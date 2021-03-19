@@ -6,11 +6,11 @@
 
 
 ### * Android Jetpack
-- - -
 - Navigation Component,   
 - LiveData,   
 - ViewModel
 - - -
+- 
 ### * Libraries
 MVVM pattern,   
 Rxjava,   
