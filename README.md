@@ -11,11 +11,14 @@
 - LiveData,   
 - ViewModel
 - - -
-* Libraries
-MVVM pattern, 
-Rxjava, Hilt, Moshi(converter), LiveData, Okhttp3,
-[Gilde](https://github.com/bumptech/glide), 
-- [Retrofit](https://github.com/square/retrofit)
+### * Libraries
+MVVM pattern,   
+Rxjava,   
+Hilt,   
+Moshi(converter),   
+[Okhttp3](https://github.com/square/okhttp),   
+[Gilde](https://github.com/bumptech/glide),    
+[Retrofit](https://github.com/square/retrofit)
 
 
 - - -
