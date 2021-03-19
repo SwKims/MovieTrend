@@ -4,8 +4,14 @@
 [TMDB](https://www.themoviedb.org/) 사용한 [이전에 만든 앱](https://github.com/SwKims/MVVM_MovieApp)보다 더 업그레이드 된 version
 
 * Android Jetpack
-
-MVVM pattern, Navigation Component, Rxjava, Hilt, Moshi(converter), LiveData, Okhttp3,
+- - -
+Navigation Component,
+LiveData,
+ViewModel
+- - -
+* Libraries
+MVVM pattern, 
+Rxjava, Hilt, Moshi(converter), LiveData, Okhttp3,
 [Gilde](https://github.com/bumptech/glide), 
 - [Retrofit](https://github.com/square/retrofit)
 
