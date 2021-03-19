@@ -44,12 +44,3 @@ MVVM architecture, Rxjava, Hilt,
 </p>
 
 
-
-                                                                                                                                        
-![KakaoTalk_20210319_142405933_01](https://user-images.githubusercontent.com/71965874/111738642-093f2480-88c5-11eb-8923-110317f36e10.jpg)
-![KakaoTalk_20210319_142405933_02](https://user-images.githubusercontent.com/71965874/111738645-09d7bb00-88c5-11eb-8d66-6c0096e002fc.jpg)
-![KakaoTalk_20210319_142405933_03](https://user-images.githubusercontent.com/71965874/111738647-0b08e800-88c5-11eb-9232-91e7e1221d0c.jpg)
-![KakaoTalk_20210319_142405933_04](https://user-images.githubusercontent.com/71965874/111738648-0b08e800-88c5-11eb-8b4c-8b06c08ec453.jpg)
-![KakaoTalk_20210319_142405933_05](https://user-images.githubusercontent.com/71965874/111738649-0ba17e80-88c5-11eb-9d8a-ed6de6d9de83.jpg)
-
-
