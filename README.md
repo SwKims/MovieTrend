@@ -25,7 +25,7 @@ MVVM architecture, Rxjava, Hilt,
 
 <img src="https://user-images.githubusercontent.com/71965874/107483462-6f4cd380-6bc4-11eb-86b3-a9e43e9eb98e.PNG">
 
-## * Navigation Componen
+## * Navigation Component
 <img src="https://user-images.githubusercontent.com/71965874/111738338-86b66500-88c4-11eb-995a-a27435a17abd.PNG" width="70%" height="75%">
 
 ## * ScreenShot
