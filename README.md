@@ -6,8 +6,8 @@
 
 
 ### * Android Jetpack
-- Navigation Component,   
-- LiveData,   
+- Navigation Component   
+- LiveData   
 - ViewModel
 - - -
  
