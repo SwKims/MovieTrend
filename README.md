@@ -18,7 +18,7 @@
 - [Gilde](https://github.com/bumptech/glide)    
 - [Retrofit](https://github.com/square/retrofit)
 
-MVVM architecture, Rxjava, Hilt,   
+MVVM architecture, Rxjava, Hilt   
 - - -
 
 ## * Architecure
@@ -30,8 +30,8 @@ MVVM architecture, Rxjava, Hilt,
 
 ## * ScreenShot
 <p float="center">
-<img src="https://user-images.githubusercontent.com/71965874/111738636-080df780-88c5-11eb-9590-06095ba1aa7a.jpg" width="35%" height="25%">
-<img src="https://user-images.githubusercontent.com/71965874/111738642-093f2480-88c5-11eb-8923-110317f36e10.jpg" width="35%" height="25%">
+<img src="https://user-images.githubusercontent.com/71965874/112586816-d0acc700-8e3f-11eb-8b81-79e71ed20c9b.jpg" width="35%" height="25%">
+<img src="https://user-images.githubusercontent.com/71965874/112586821-d1ddf400-8e3f-11eb-871f-057c70b487f2.jpg" width="35%" height="25%">
 </p>
 
 <p float="center">
