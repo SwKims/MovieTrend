@@ -10,7 +10,7 @@
         android:icon="@drawable/ic_upcoming" />
 
     <item android:id="@+id/trendingFragment"
-        android:title="Trending"
-        android:icon="@drawable/ic_trending" />
+        android:title="NowPlaying"
+        android:icon="@drawable/ic_play" />
 
 </menu>

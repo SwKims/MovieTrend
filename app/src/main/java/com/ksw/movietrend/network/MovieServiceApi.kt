@@ -28,6 +28,9 @@ interface MovieServiceApi {
     @GET("movie/upcoming")
     fun getUpcomingMovie(): Single<Movies>
 
+    @GET("movie/now_playing")
+    fun getNowPlayingMovie(): Single<Movies>
+
     @GET("movie/{movieId}?append_to_response=credits")
     fun getMovie(@Path("movieId") movieId: Long): Single<Movie>
 

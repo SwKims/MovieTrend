@@ -48,5 +48,9 @@
         android:id="@+id/trendingFragment"
         android:name="com.ksw.movietrend.ui.trending.TrendingFragment"
         android:label="fragment_trending"
-        tools:layout="@layout/fragment_trending" />
+        tools:layout="@layout/fragment_trending" >
+        <action
+            android:id="@+id/action_trendingFragment_to_movieDetailFragment"
+            app:destination="@id/movieDetailFragment" />
+    </fragment>
 </navigation>

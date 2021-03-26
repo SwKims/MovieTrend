@@ -25,6 +25,11 @@ class MovieRepository @Inject constructor(
             .subscribeOn(Schedulers.io())
     }
 
+    fun getNowPlayingMovie(): Single<Movies> {
+        return movieServiceApi.getNowPlayingMovie()
+            .subscribeOn(Schedulers.io())
+    }
+
     fun getMovieDetails(movieId: Long): Single<Movie> {
         return movieServiceApi.getMovie(movieId)
             .subscribeOn(Schedulers.io())

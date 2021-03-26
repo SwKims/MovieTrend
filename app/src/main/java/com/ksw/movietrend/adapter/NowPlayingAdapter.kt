@@ -8,14 +8,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.ksw.movietrend.R
 import com.ksw.movietrend.glide.GlideApp
 import com.ksw.movietrend.model.Movie
-import com.ksw.movietrend.ui.popular.LandingFragmentDirections
+import com.ksw.movietrend.ui.trending.TrendingFragmentDirections
 import kotlinx.android.synthetic.main.item_movie.view.*
 
 /**
- * Created by KSW on 2021-01-29
+ * Created by KSW on 2021-03-26
  */
 
-class MovieAdapter : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
+class NowPlayingAdapter : RecyclerView.Adapter<NowPlayingAdapter.MovieViewHolder>() {
 
     private var movies: List<Movie> = listOf()
 
@@ -28,7 +28,9 @@ class MovieAdapter : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
         holder.bind(movie)
     }
 
-    override fun getItemCount(): Int = movies.size
+    override fun getItemCount(): Int {
+        return movies.size
+    }
 
     fun setMovies(movies: List<Movie>) {
         this.movies = movies
@@ -36,15 +38,16 @@ class MovieAdapter : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
     }
 
     class MovieViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-
         fun bind(movie: Movie) {
 
-            // go detailView
             itemView.setOnClickListener {
                 val directions =
-                    LandingFragmentDirections.actionLandingFragmentToMovieDetailFragment(movie.id!!)
+                    TrendingFragmentDirections.actionTrendingFragmentToMovieDetailFragment(movie.id!!)
                 it.findNavController().navigate(directions)
+
             }
+
+
 
             itemView.apply {
                 GlideApp.with(iv_poster)
@@ -58,7 +61,6 @@ class MovieAdapter : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
                 tv_releaseDate.text = movie.releaseDate
                 tv_overView.text = movie.overview
             }
-
         }
 
         companion object {
@@ -68,5 +70,8 @@ class MovieAdapter : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
                 return MovieViewHolder(itemView)
             }
         }
+
     }
+
+
 }

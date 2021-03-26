@@ -8,7 +8,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.ksw.movietrend.R
 import com.ksw.movietrend.glide.GlideApp
 import com.ksw.movietrend.model.Movie
-import com.ksw.movietrend.ui.popular.LandingFragmentDirections
 import com.ksw.movietrend.ui.upcoming.UpcomingFragmentDirections
 import kotlinx.android.synthetic.main.item_movie.view.*
 
@@ -53,7 +52,7 @@ class UpcomingAdapter : RecyclerView.Adapter<UpcomingAdapter.MovieViewHolder>() 
                     .placeholder(R.drawable.ic_placeholder)
                     .error(R.drawable.ic_error)
                     .into(iv_poster)
-                tv_rate.text = movie.voteAverage.toString()
+//                tv_rate.text = movie.voteAverage.toString()
                 tv_title.text = movie.title
                 tv_language.text = movie.originalLanguage!!.toUpperCase()
                 tv_releaseDate.text = movie.releaseDate
